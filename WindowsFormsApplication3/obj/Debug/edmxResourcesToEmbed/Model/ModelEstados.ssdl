@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EstadosModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="EstadosModelStoreContainer">
+    <EntitySet Name="Estados" EntityType="EstadosModel.Store.Estados" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Estados">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="nchar" MaxLength="20" />
+    <Property Name="Sigla" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <Function Name="ListaEstados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sigla" Type="varchar" Mode="In" />
+  </Function>
+</Schema>
